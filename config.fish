@@ -15,7 +15,7 @@ export FISHRC='~/.config/fish/config.fish'
 # === general alias
 # ===
 alias c=clear
-alias rm="trash"
+alias rm=trash
 alias vbox=VBoxManage
 
 # vim
@@ -25,7 +25,7 @@ alias vim='nvim'
 alias k=kubectl
 alias d=docker
 
-alias ll='ls -l'
+alias ll='ls -hlt'
 alias la='ls -a'
 alias gcc4='gcc-4.9'
 alias gcc=gcc-10
@@ -35,17 +35,19 @@ alias grep="grep --color=auto"
 # ===
 # === development
 # ===
-# vm in virtual box
+## vm in virtual box
 alias start-ubuntu="vbox startvm ubuntu --type headless"
 alias stop-ubuntu="vbox controlvm ubuntu poweroff --type headless"
 
 alias ubuntu="ssh yqiu@localhost -p 2333"
 alias arch="ssh yqiu@localhost -p 2334"
 
-# mysql
-alias mycli-local="mycli -h127.0.0.1 -uroot -pabcd1234"
+## mysql
+alias myroot="mycli -h127.0.0.1 -uroot -pabcd1234"
+alias myengine="mycli -h127.0.0.1 -uengine -pabcd1234 uluru_test"
+alias myuluru="mycli -h127.0.0.1 -uuluru -ppass@pass uluru"
 
-# leanengine cloud code docker server
+## leanengine cloud code docker server
 alias docker-server="ssh ubuntu@localhost"
 
 # ===
@@ -79,6 +81,7 @@ set -x FZF_DEFAULT_OPTS '
 # ===
 ## java
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home"
+# export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-11.jdk/Contents/Home"
 
 ## rust
 export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
@@ -92,6 +95,18 @@ export PATH="$GOROOT/bin:$PATH"
 
 ## node
 export PATH="/usr/local/opt/node@12/bin:$PATH"
+export PATH="/usr/local/opt/node@14/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+
+## python
+alias python=python3
+alias py=python3
+alias pip=pip3
+alias ipy=ipython3
+
+## ruby
+export PATH="/usr/local/opt/ruby@2.7/bin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 
 # ===
@@ -107,3 +122,15 @@ export PATH="/usr/local/opt/llvm/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/llvm/lib"
 export CPPFLAGS="-I/usr/local/opt/llvm/include"
 
+# ===
+# === System
+# ===
+
+## file
+ulimit -n 2048
+
+## influxdb
+export PATH="/usr/local/opt/influxdb@1/bin:$PATH"
+
+## kitty
+alias ssh="kitty +kitten ssh"
