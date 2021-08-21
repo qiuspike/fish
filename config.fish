@@ -72,7 +72,7 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 ## using `fd` for fzf
 export FZF_DEFAULT_COMMAND='fd --type f'
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS"
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS
 --bind 'ctrl-f:preview-page-down,ctrl-b:preview-page-up'
 "
 
