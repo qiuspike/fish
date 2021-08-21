@@ -72,16 +72,16 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 ## using `fd` for fzf
 export FZF_DEFAULT_COMMAND='fd --type f'
-set -x FZF_DEFAULT_OPTS '
-    --bind ctrl-f:preview-page-down,ctrl-b:preview-page-up'
-
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS"
+--bind 'ctrl-f:preview-page-down,ctrl-b:preview-page-up'
+"
 
 # ===
 # === Language Specific
 # ===
 ## java
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home"
-# export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-11.jdk/Contents/Home"
+# export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-11.jdk/Contents/Home"
 
 ## rust
 export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
@@ -94,7 +94,6 @@ export PATH="$GOPATH/bin:$PATH"
 export PATH="$GOROOT/bin:$PATH"
 
 ## node
-export PATH="/usr/local/opt/node@12/bin:$PATH"
 export PATH="/usr/local/opt/node@14/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 
